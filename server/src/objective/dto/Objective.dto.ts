@@ -1,4 +1,8 @@
+import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
 
-class ObjectiveDto {
-
+export class ObjectiveDto {
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(100)
+  title: string;
 }

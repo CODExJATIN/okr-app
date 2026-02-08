@@ -1,5 +1,6 @@
 import {Injectable} from '@nestjs/common';
 import {PrismaService} from "../prisma.service";
+import {ObjectiveDto} from "./dto/Objective.dto";
 
 @Injectable()
 export class ObjectiveService {
@@ -7,16 +8,37 @@ export class ObjectiveService {
     }
 
     getAll() {
-        this.prismaService.objective.findMany()
+        return this.prismaService.objective.findMany()
     }
 
     getById(id: string) {
-        this.prismaService.objective.findUnique(
+        return this.prismaService.objective.findUnique(
             {
                 where: {
                     id: id,
                 }
             }
         )
+    }
+
+    create(objectiveDto: ObjectiveDto) {
+        return this.prismaService.objective.create({data: objectiveDto});
+    }
+
+    update(objectiveDto: ObjectiveDto, id: string) {
+        return this.prismaService.objective.update({
+            data: objectiveDto,
+            where: {
+                id: id
+            }
+        });
+    }
+
+    delete(id: string) {
+      return this.prismaService.objective.delete({
+          where: {
+              id: id,
+          }
+      })
     }
 }
