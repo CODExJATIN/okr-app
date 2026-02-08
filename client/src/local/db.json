@@ -1,0 +1,241 @@
+{
+  "okrs": [
+    {
+      "id": "b1e3d6a2-7f9c-4f4e-9e3e-1b9e8a6c1a01",
+      "objective": "Improve onboarding experience for new users",
+      "keyResults": [
+        {
+          "id": "a21f4b8c-0d6e-4d7a-b3f1-2f6c8e9a1101",
+          "isCompleted": false,
+          "description": "Reduce onboarding completion time",
+          "measure": "100"
+        },
+        {
+          "id": "c9b8e6f2-2a41-4c1f-9a73-5d8e2b110102",
+          "isCompleted": false,
+          "description": "Increase onboarding completion rate",
+          "measure": "85"
+        }
+      ]
+    },
+    {
+      "id": "d3f7a1e9-8c2e-4f65-bc7a-91e2d4a20002",
+      "objective": "Increase daily active users",
+      "keyResults": [
+        {
+          "id": "e12c4f9a-4d5e-4b77-a9c1-0b3f11020001",
+          "isCompleted": false,
+          "description": "Improve feature discoverability",
+          "measure": "30%"
+        },
+        {
+          "id": "f7b1a2e4-9c6d-4a11-8e22-3d11020002",
+          "isCompleted": true,
+          "description": "Launch engagement notifications",
+          "measure": "20%"
+        },
+        {
+          "id": "1a9c3e4f-7b2d-4f66-b1a0-9e11020003",
+          "isCompleted": false,
+          "description": "Introduce referral incentives",
+          "measure": "15%"
+        }
+      ]
+    },
+    {
+      "id": "e8c4a1f9-6d7b-41a2-b0d9-2f1e330003",
+      "objective": "Improve application performance",
+      "keyResults": [
+        {
+          "id": "2b6e7a4c-0f19-4e5c-9f1a-11030001aabb",
+          "isCompleted": true,
+          "description": "Reduce API response time",
+          "measure": "200ms"
+        },
+        {
+          "id": "9f2b3c6a-4d8e-47b1-a0e2-11030002bbcc",
+          "isCompleted": false,
+          "description": "Optimize database queries",
+          "measure": "40%"
+        }
+      ]
+    },
+    {
+      "id": "1f7b8a3d-9c2e-4c55-ae1f-220004aa55bb",
+      "objective": "Increase customer satisfaction",
+      "keyResults": [
+        {
+          "id": "8a9c1e2f-3d6b-4e7f-b1a0-11040001ccdd",
+          "isCompleted": true,
+          "description": "Improve support response time",
+          "measure": "2 hrs"
+        },
+        {
+          "id": "6e1d7a9c-b2f4-49a1-8c0e-11040002ddee",
+          "isCompleted": false,
+          "description": "Improve feedback scores",
+          "measure": "4.5+"
+        }
+      ]
+    },
+    {
+      "id": "9a1e6f3c-bd72-4f11-8c1a-550005ffee",
+      "objective": "Strengthen platform security",
+      "keyResults": [
+        {
+          "id": "3f7e2b1a-8c4d-41a9-bf11-11050001abcd",
+          "isCompleted": true,
+          "description": "Enable two-factor authentication",
+          "measure": "100%"
+        },
+        {
+          "id": "4b1c8e7a-9f6d-47b2-ae10-11050002bcde",
+          "isCompleted": false,
+          "description": "Complete security audit",
+          "measure": "0 critical issues"
+        }
+      ]
+    },
+    {
+      "id": "4c2e7b8a-1d6f-45a9-bc2e-660006abcd",
+      "objective": "Increase user retention",
+      "keyResults": [
+        {
+          "id": "1a2e3c4f-5b6d-4e7a-8c9f-11060001dcba",
+          "isCompleted": false,
+          "description": "Reduce monthly churn",
+          "measure": "3%"
+        },
+        {
+          "id": "7e6c5b4a-3d2f-41a9-8c1e-11060002efab",
+          "isCompleted": true,
+          "description": "Improve weekly retention",
+          "measure": "60%"
+        }
+      ]
+    },
+    {
+      "id": "b7a4c8d1-2f9e-4a61-bc7d-770007eeff",
+      "objective": "Enhance search experience",
+      "keyResults": [
+        {
+          "id": "2c7e1f9a-8b4d-47a3-9c6e-11070001a1b2",
+          "isCompleted": false,
+          "description": "Improve search relevance",
+          "measure": "90"
+        },
+        {
+          "id": "5a9e6c7f-1d3b-4c8a-b2e1-11070002c3d4",
+          "isCompleted": false,
+          "description": "Add advanced filters",
+          "measure": "10"
+        }
+      ]
+    },
+    {
+      "id": "c1a9f4e7-6d2b-4a11-8f9c-8800081122",
+      "objective": "Improve documentation quality",
+      "keyResults": [
+        {
+          "id": "9e1a3c4b-7d6f-4f2a-8c0e-11080001e5f6",
+          "isCompleted": true,
+          "description": "Update API documentation",
+          "measure": "100%"
+        },
+        {
+          "id": "4f8e6c1a-9b7d-4a3f-8e2c-11080002a7b8",
+          "isCompleted": false,
+          "description": "Add usage examples",
+          "measure": "10 APIs"
+        }
+      ]
+    },
+    {
+      "id": "6b3f9e2a-4c1d-4f77-ae9b-9900093344",
+      "objective": "Optimize deployment process",
+      "keyResults": [
+        {
+          "id": "1e7c2b6a-9d8f-4c1a-b0e9-11090001c9d0",
+          "isCompleted": false,
+          "description": "Reduce deployment time",
+          "measure": "10 mins"
+        },
+        {
+          "id": "3c9a8f2e-6d1b-47a0-8e4f-11090002e1f2",
+          "isCompleted": true,
+          "description": "Automate rollback",
+          "measure": "100%"
+        }
+      ]
+    },
+    {
+      "id": "8f1a2c9d-7b4e-4e11-a3c9-aa0010abcd",
+      "objective": "Increase adoption of advanced features",
+      "keyResults": [
+        {
+          "id": "9a3e1c4f-2b7d-4e8a-b6c1-11100001abcd",
+          "isCompleted": false,
+          "description": "Promote advanced features in UI",
+          "measure": "40%"
+        },
+        {
+          "id": "7c6b5a4e-3d2f-49a1-8c9e-11100002dcba",
+          "isCompleted": true,
+          "description": "Create feature walkthroughs",
+          "measure": "70%"
+        }
+      ]
+    },
+    {
+      "id": "ddae5783-5c80-49a5-9dad-de0b725ff067",
+      "objective": "complrete the okr frontend ",
+      "keyResults": [
+        {
+          "id": "55163ca2-6aaf-4a29-9a73-7bd5e22d3b08",
+          "isCompleted": false,
+          "description": "create the edit functionality",
+          "measure": "10"
+        },
+        {
+          "id": "e108671f-86c5-4d99-b619-c118d9dc364b",
+          "isCompleted": false,
+          "description": "create the delete functionality",
+          "measure": "10"
+        }
+      ],
+      "isCompleted": false
+    },
+    {
+      "id": "9b94be79-eed3-4b6a-bdec-42631c224c36",
+      "objective": "CDNKJVBNFKJVFV",
+      "keyResults": [
+        {
+          "id": "2cf920ea-5cd1-41dd-8d74-d730341ae83d",
+          "isCompleted": false,
+          "description": "JKVNFKJVNFKVJ",
+          "measure": "100"
+        },
+        {
+          "id": "7d437dc4-32b7-4fbe-a276-3fdfb3d928b6",
+          "isCompleted": false,
+          "description": "JB VBBVHFBVHJ",
+          "measure": "20"
+        }
+      ],
+      "isCompleted": false
+    },
+    {
+      "id": "0170ce64-90bb-4f30-b908-c812f1571e99",
+      "objective": "DNELKFNEKLFNELFK",
+      "keyResults": [
+        {
+          "id": "3742757a-c5a2-4758-83e0-39f59d1c8334",
+          "isCompleted": false,
+          "description": "FKENFKLENFKLEF",
+          "measure": "10"
+        }
+      ],
+      "isCompleted": false
+    }
+  ]
+}

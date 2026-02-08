@@ -25,5 +25,5 @@ model KeyResult {
   description String
   progress    Int       @default(0)
   objectiveId String
-  objective   Objective @relation(fields: [objectiveId], references: [id])
+  objective   Objective @relation(fields: [objectiveId], references: [id], onDelete: Cascade)
 }

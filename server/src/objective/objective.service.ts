@@ -8,7 +8,11 @@ export class ObjectiveService {
     }
 
     getAll() {
-        return this.prismaService.objective.findMany()
+        return this.prismaService.objective.findMany({
+            include: {
+                keyResults: true,
+            }
+        })
     }
 
     getById(id: string) {
@@ -16,13 +20,21 @@ export class ObjectiveService {
             {
                 where: {
                     id: id,
+                },
+                include: {
+                    keyResults: true,
                 }
             }
         )
     }
 
     create(objectiveDto: ObjectiveDto) {
-        return this.prismaService.objective.create({data: objectiveDto});
+        return this.prismaService.objective.create({
+            data: objectiveDto,
+            include: {
+                keyResults: true,
+            }
+        });
     }
 
     update(objectiveDto: ObjectiveDto, id: string) {
@@ -30,6 +42,9 @@ export class ObjectiveService {
             data: objectiveDto,
             where: {
                 id: id
+            },
+            include: {
+                keyResults: true,
             }
         });
     }
@@ -38,6 +53,9 @@ export class ObjectiveService {
       return this.prismaService.objective.delete({
           where: {
               id: id,
+          },
+          include: {
+              keyResults: true,
           }
       })
     }
