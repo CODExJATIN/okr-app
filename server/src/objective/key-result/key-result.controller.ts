@@ -12,6 +12,13 @@ export class KeyResultController {
     return this.keyResultService.getByObjectiveId(objectiveId);
   }
 
+@Get('/status')
+  isCompleted(@Param('objectiveId') objectiveId: string) {
+    return this.keyResultService.isObjectiveCompleted(objectiveId);
+
+  }
+
+
   @Get('/:keyResultId')
   getById(@Param('keyResultId') keyResultId: string) {
     return this.keyResultService.getById(keyResultId);
@@ -31,4 +38,10 @@ export class KeyResultController {
   delete(@Param('keyResultId') keyResultId: string) {
     return this.keyResultService.delete(keyResultId);
   }
+
+
 }
+function isCompleted() {
+    throw new Error("Function not implemented.");
+}
+

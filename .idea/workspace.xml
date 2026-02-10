@@ -28,25 +28,93 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "D:\\incubyte\\okr-app\\server\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Jest.KeyResultService.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.KeyResultService.isCompleted.Should return false when any one of the key results is not completed.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.KeyResultService.isCompleted.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.KeyResultService.isCompleted.should return true when no key result found.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;D:/incubyte/okr-app/server/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\incubyte\\okr-app\\server\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="Jest.KeyResultService.isCompleted">
+    <configuration name="KeyResultService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/server" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.spec.ts" />
+      <test-names>
+        <test-name value="KeyResultService" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="KeyResultService.isCompleted" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/server" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.spec.ts" />
+      <test-names>
+        <test-name value="KeyResultService" />
+        <test-name value="isCompleted" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="KeyResultService.isCompleted.Should return false when any one of the key results is not completed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/server" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.spec.ts" />
+      <test-names>
+        <test-name value="KeyResultService" />
+        <test-name value="isCompleted" />
+        <test-name value="Should return false when any one of the key results is not completed" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="KeyResultService.isCompleted.should return true when no key result found" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/server" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.spec.ts" />
+      <test-names>
+        <test-name value="KeyResultService" />
+        <test-name value="isCompleted" />
+        <test-name value="should return true when no key result found" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.KeyResultService.isCompleted" />
+        <item itemvalue="Jest.KeyResultService" />
+        <item itemvalue="Jest.KeyResultService.isCompleted.should return true when no key result found" />
+        <item itemvalue="Jest.KeyResultService.isCompleted.Should return false when any one of the key results is not completed" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -64,7 +132,10 @@
       <workItem from="1770479971425" duration="3299000" />
       <workItem from="1770537967651" duration="3948000" />
       <workItem from="1770543985962" duration="8132000" />
-      <workItem from="1770565357987" duration="15816000" />
+      <workItem from="1770565357987" duration="15949000" />
+      <workItem from="1770611098581" duration="10651000" />
+      <workItem from="1770628559950" duration="6345000" />
+      <workItem from="1770661187743" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="initial backend setup">
       <option name="closed" value="true" />
@@ -83,5 +154,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial backend setup" />
     <option name="LAST_COMMIT_MESSAGE" value="initial backend setup" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/OKRForm.tsx</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

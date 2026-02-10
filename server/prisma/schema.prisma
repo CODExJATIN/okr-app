@@ -15,9 +15,11 @@ datasource db {
 }
 
 model Objective {
-  id         String      @id @default(uuid())
-  title      String
-  keyResults KeyResult[]
+  id          String      @id @default(uuid())
+  title       String
+  isCompleted Boolean     @default(false)
+  keyResults  KeyResult[]
+  progress    Int         @default(0)
 }
 
 model KeyResult {
