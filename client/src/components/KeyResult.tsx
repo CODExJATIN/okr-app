@@ -30,7 +30,7 @@ const KeyResult = ({ keyResult, index }: KeyResultProps) => {
         <div className="flex items-center gap-2 mb-0.5">
           <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1">
             <Target size={10} className={isFinished ? 'text-emerald-400' : 'text-indigo-400'} />
-            Metric {index + 1}
+            {keyResult.metric || 'percentage'} - Target: {keyResult.target || 100}
           </span>
         </div>
         <p

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64dba47a-a862-431a-b6b8-3dc79563de0c" name="Changes" comment="initial backend setup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="64dba47a-a862-431a-b6b8-3dc79563de0c" name="Changes" comment="initial backend setup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +37,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -136,6 +135,9 @@
       <workItem from="1770611098581" duration="10651000" />
       <workItem from="1770628559950" duration="6345000" />
       <workItem from="1770661187743" duration="616000" />
+      <workItem from="1770697479669" duration="9677000" />
+      <workItem from="1770715136221" duration="1885000" />
+      <workItem from="1770783853622" duration="2570000" />
     </task>
     <task id="LOCAL-00001" summary="initial backend setup">
       <option name="closed" value="true" />

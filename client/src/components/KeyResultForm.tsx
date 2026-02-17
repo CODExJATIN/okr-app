@@ -12,6 +12,8 @@ const KeyResultForm = ({ objectiveId = '' }: Props) => {
         id: '',
         description: '',
         progress: 0,
+        target: 100,
+        metric: 'percentage',
     });
 
     const [editingId, setEditingId] = useState<string | null>(null);
@@ -40,6 +42,8 @@ const handleAddOrUpdate = async () => {
       const updatePromise = updateKeyResult(objectiveId, editingId, {
         description: keyResult.description,
         progress: keyResult.progress ?? 0,
+        target: keyResult.target ?? 100,
+        metric: keyResult.metric ?? 'percentage',
       });
       
       await updatePromise;
@@ -51,17 +55,23 @@ const handleAddOrUpdate = async () => {
         id: '',
         description: '',
         progress: 0,
+        target: 100,
+        metric: 'percentage',
       });
     } else {
       await addKeyResult(objectiveId, {
         description: keyResult.description,
         progress: keyResult.progress ?? 0,
+        target: keyResult.target ?? 100,
+        metric: keyResult.metric ?? 'percentage',
       });
 
       setKeyResult({
         id: '',
         description: '',
         progress: 0,
+        target: 100,
+        metric: 'percentage',
       });
     }
   } finally {
@@ -96,7 +106,7 @@ const handleAddOrUpdate = async () => {
         <div className="space-y-6">
             <div className="flex items-center gap-3 mb-2">
                 <div className="bg-indigo-100 p-2 rounded-lg">
-                    <span className="text-xl">🎯</span>
+                    <span className="text-xl"></span>
                 </div>
                 <h3 className="text-sm font-black text-indigo-900 uppercase tracking-[0.15em]">
                     Key Results
@@ -118,19 +128,59 @@ const handleAddOrUpdate = async () => {
                     className="w-full border-2 border-gray-100 bg-white p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all duration-300 placeholder-gray-400 text-gray-700 font-medium disabled:opacity-50"
                 />
 
-                <input
-                    type="number"
-                    placeholder="Progress (0–100)"
-                    value={keyResult.progress}
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="flex flex-col">
+                        <p className={"text-sm font-black text-indigo-900 uppercase tracking-[0.15em]"}>Progress</p>
+                        <input
+                            type="number"
+                            placeholder="Progress (0–100)"
+                            value={keyResult.progress}
+                            onChange={(e) =>
+                                setKeyResult((prev) => ({
+                                    ...prev,
+                                    progress: Number(e.target.value),
+                                }))
+                            }
+                            disabled={isLoading}
+                            className="w-full border-2 border-gray-100 bg-white p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all duration-300 placeholder-gray-400 text-gray-700 font-medium disabled:opacity-50"
+                        />
+                    </div>
+
+                    <div className="flex flex-col">
+                        <p className={"text-sm font-black text-indigo-900 uppercase tracking-[0.15em]"}>Target</p>
+                        <input
+                            type="number"
+                            placeholder="Target"
+                            value={keyResult.target ?? 100}
+                            onChange={(e) =>
+                                setKeyResult((prev) => ({
+                                    ...prev,
+                                    target: Number(e.target.value),
+                                }))
+                            }
+                            disabled={isLoading}
+                            className="w-full border-2 border-gray-100 bg-white p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all duration-300 placeholder-gray-400 text-gray-700 font-medium disabled:opacity-50"
+                        />
+                    </div>
+                </div>
+
+                <select
+                    value={keyResult.metric ?? 'percentage'}
                     onChange={(e) =>
                         setKeyResult((prev) => ({
                             ...prev,
-                            progress: Number(e.target.value),
+                            metric: e.target.value,
                         }))
                     }
                     disabled={isLoading}
-                    className="w-full border-2 border-gray-100 bg-white p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all duration-300 placeholder-gray-400 text-gray-700 font-medium disabled:opacity-50"
-                />
+                    className="w-full border-2 border-gray-100 bg-white p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all duration-300 text-gray-700 font-medium disabled:opacity-50"
+                >
+                    <option value="percentage">Percentage (%)</option>
+                    <option value="count">Count</option>
+                    <option value="number">Number</option>
+                    <option value="currency">Currency</option>
+                    <option value="hours">Hours</option>
+                </select>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -141,6 +191,8 @@ const handleAddOrUpdate = async () => {
                             id: '',
                             description: '',
                             progress: 0,
+                            target: 100,
+                            metric: 'percentage',
                         });
                         setEditingId(null);
                     }}
@@ -179,6 +231,9 @@ const handleAddOrUpdate = async () => {
                             <p className="text-gray-800 font-semibold leading-snug">
                                 {displayKr.description}
                             </p>
+                            <p className="text-gray-400 text-[11px] mt-1">
+                                Metric: {displayKr.metric || 'percentage'} | Target: {displayKr.target || 100}
+                            </p>
                         </div>
 
                         <div className="ml-4 bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-black">
@@ -201,9 +256,11 @@ const handleAddOrUpdate = async () => {
                                             id: '',
                                             description: '',
                                             progress: 0,
+                                            target: 100,
+                                            metric: 'percentage',
                                         });
                                     } else {
-                                        setKeyResult(kr);
+                                        setKeyResult({...kr, target: kr.target || 100, metric: kr.metric || 'percentage'});
                                         setEditingId(kr.id);
                                     }
                                 }}

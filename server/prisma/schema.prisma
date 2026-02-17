@@ -26,6 +26,8 @@ model KeyResult {
   id          String    @id @default(uuid())
   description String
   progress    Int       @default(0)
+  target      Int       @default(100)
+  metric      String    @default("percentage")
   objectiveId String
   objective   Objective @relation(fields: [objectiveId], references: [id], onDelete: Cascade)
 }

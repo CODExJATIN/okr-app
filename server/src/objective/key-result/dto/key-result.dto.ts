@@ -1,4 +1,4 @@
-import {IsNotEmpty, IsNumber, IsString} from "class-validator";
+import {IsNotEmpty, IsNumber, IsString, IsOptional} from "class-validator";
 
 
 export class KeyResultDto {
@@ -9,4 +9,12 @@ export class KeyResultDto {
     @IsNumber()
     @IsNotEmpty()
     progress : number;
+
+    @IsNumber()
+    @IsOptional()
+    target?: number;
+
+    @IsString()
+    @IsOptional()
+    metric?: string;
 }

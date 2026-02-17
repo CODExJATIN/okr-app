@@ -37,7 +37,7 @@ export const OkrList = ({ okrs, onEdit }: OkrListProps) => {
             <div className="absolute -left-2.25 top-2 z-10">
               <div
                 className={`w-4 h-4 rounded-full border-4 border-white shadow-sm transition-all duration-500 group-hover:scale-125 ${
-                  okr.isCompleted
+                  progress
                     ? 'bg-emerald-500 ring-4 ring-emerald-50'
                     : 'bg-slate-300 ring-4 ring-slate-50'
                 }`}
@@ -46,7 +46,7 @@ export const OkrList = ({ okrs, onEdit }: OkrListProps) => {
 
             <div
               className={`bg-white rounded-4xl p-6 md:p-10 shadow-sm border border-slate-100 transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-100/50 hover:-translate-y-1 ${
-                okr.isCompleted ? 'bg-emerald-50/20' : ''
+                progress ? 'bg-emerald-50/20' : ''
               }`}
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
@@ -54,12 +54,12 @@ export const OkrList = ({ okrs, onEdit }: OkrListProps) => {
                   <div className="flex items-center gap-3">
                     <span
                       className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${
-                        okr.isCompleted
+                        progress
                           ? 'bg-emerald-100 text-emerald-700'
                           : 'bg-indigo-50 text-indigo-600'
                       }`}
                     >
-                      {okr.isCompleted ? 'Mission Complete' : 'Active Objective'}
+                      {progress ? 'Mission Complete' : 'Active Objective'}
                     </span>
                     {totalKRs > 0 && (
                       <span className="flex items-center gap-1 text-[11px] font-semibold text-slate-400">
@@ -71,7 +71,7 @@ export const OkrList = ({ okrs, onEdit }: OkrListProps) => {
 
                   <h3
                     className={`text-2xl md:text-3xl font-bold tracking-tight leading-tight transition-all duration-300 ${
-                      okr.isCompleted
+                      progress
                         ? 'text-slate-400 line-through decoration-emerald-500/30'
                         : 'text-slate-900'
                     }`}
@@ -84,7 +84,7 @@ export const OkrList = ({ okrs, onEdit }: OkrListProps) => {
                   <div className="text-right">
                     <div className="flex items-baseline gap-1">
                       <span
-                        className={`text-3xl font-black transition-colors ${okr.isCompleted ? 'text-emerald-600' : 'text-slate-900'}`}
+                        className={`text-3xl font-black transition-colors ${progress ? 'text-emerald-600' : 'text-slate-900'}`}
                       >
                         {progress}
                       </span>
@@ -108,7 +108,7 @@ export const OkrList = ({ okrs, onEdit }: OkrListProps) => {
               <div className="relative w-full h-3 bg-slate-100 rounded-full mb-10 overflow-hidden shadow-inner">
                 <div
                   className={`absolute top-0 left-0 h-full transition-all duration-1000 ease-out rounded-full ${
-                    okr.isCompleted
+                    progress
                       ? 'bg-linear-to-r from-emerald-400 to-emerald-500'
                       : 'bg-linear-to-r from-indigo-500 via-purple-500 to-indigo-600'
                   }`}

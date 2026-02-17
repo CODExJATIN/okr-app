@@ -69,6 +69,8 @@ function OKRForm({ onSuccess, setOkrs, editingOkr }: OKRFormProps) {
                 createKeyResults(response.id, {
                   description: kr.description,
                   progress: kr.progress,
+                  target: kr.target,
+                  metric: kr.metric,
                 })
               )
             );
@@ -120,7 +122,7 @@ function OKRForm({ onSuccess, setOkrs, editingOkr }: OKRFormProps) {
         </label>
         <div className="relative group">
           <span className="absolute left-5 top-1/2 -translate-y-1/2 text-2xl transition-transform group-focus-within:scale-125 duration-300">
-            🚀
+
           </span>
           <input
             type="text"
@@ -130,7 +132,7 @@ function OKRForm({ onSuccess, setOkrs, editingOkr }: OKRFormProps) {
             className="w-full border-2 border-gray-100 bg-gray-50/50 py-4 pl-16 pr-16 rounded-3xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:bg-white focus:border-indigo-500 transition-all duration-300 placeholder-gray-400 text-gray-800 text-lg font-semibold shadow-inner"
           />
           <span className="absolute right-5 top-1/2 -translate-y-1/2 text-2xl transition-transform group-focus-within:scale-125 duration-300">
-            ✨
+
           </span>
         </div>
       </div>

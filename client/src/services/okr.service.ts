@@ -58,7 +58,7 @@ export const updateOkr = async (objective: {id: string; title: string})=>{
 
 export const createKeyResults = async (
     objectiveId: string,
-    keyResult: Pick<KeyResultType, 'description' | 'progress'>
+    keyResult: Pick<KeyResultType, 'description' | 'progress' | 'target' | 'metric'>
 ): Promise<KeyResultType> => {
   const response = await fetch(
       `${SERVER_URL}/objective/${objectiveId}/key-result`,
