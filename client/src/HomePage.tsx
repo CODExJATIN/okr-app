@@ -6,6 +6,7 @@ import type { OKRType } from './types/okr_types.tsx';
 import { KeyResultProvider } from './providers/KeyResultProvider.tsx';
 import { getAllOkrs } from './services/okr.service.ts';
 import { Target, Plus, LayoutDashboard, Sparkles } from 'lucide-react';
+import {AiChatBot} from "./components/AiChatBot.tsx";
 
 const HomePage = () => {
   const [okrs, setOkrs] = useState<OKRType[]>([]);
@@ -145,6 +146,7 @@ const HomePage = () => {
       <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-50 text-center">
         <p className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em]">OKR APP</p>
       </footer>
+      <AiChatBot/>
     </div>
   );
 };

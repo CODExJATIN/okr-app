@@ -1,4 +1,6 @@
 import type {KeyResultType, OKRType} from '../types/okr_types.tsx';
+import type {ChatDto} from "../components/AiChatBot.tsx";
+
 
 const SERVER_URL = 'http://localhost:3000';
 
@@ -101,4 +103,21 @@ export const deleteKeyResults = async (objectiveId:string, keyResultId:string): 
     throw new Error('Failed to delete objective');
   }
   return result.json();
+}
+
+export const getAiResponse = async (data: ChatDto[]) => {
+  const response = await fetch(`${SERVER_URL}/ai/chat`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }
+      );
+
+  if (!response.ok) {
+    throw new Error('Failed to get ai');
+  }
+  return response.json();
 }

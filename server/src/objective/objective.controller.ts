@@ -1,6 +1,7 @@
 import {Body, Controller, Delete, Get, Param, Patch, Post} from '@nestjs/common';
 import {ObjectiveService} from './objective.service';
 import {ObjectiveDto} from "./dto/Objective.dto";
+import {ApiOperation, ApiResponse} from "@nestjs/swagger";
 
 
 @Controller('objective')
@@ -19,6 +20,9 @@ export class ObjectiveController {
     }
 
     @Post()
+    @ApiOperation({ summary: 'Create Objective', description:'This endpoint creates objective and saves it to database' })
+
+    @ApiResponse({ status: 201, description: 'Created.' })
     createObjective(@Body() objectiveDto: ObjectiveDto) {
         return this.objectiveService.create(objectiveDto);
     }
