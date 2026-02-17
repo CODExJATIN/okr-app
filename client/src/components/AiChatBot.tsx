@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { SendHorizontal, Bot } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import { getAiResponse } from "../services/okr.service.ts";
+import { sendToAi } from "../services/okr.service.ts";
 
 interface Message {
     text: string;
@@ -39,7 +39,7 @@ export const AiChatBot = () => {
         setLoading(true);
 
         try {
-            const result = await getAiResponse([...messages, newMessage]);
+            const result = await sendToAi([...messages, newMessage]);
 
             const aiResponse: ChatDto = {
                 role: "model",
@@ -61,10 +61,8 @@ export const AiChatBot = () => {
     };
 
     return (
-        <div className="flex h-screen bg-gray-50 items-center justify-center p-4">
-            <div className="flex flex-col w-full max-w-3xl h-full bg-white shadow-xl rounded-2xl border border-gray-200 overflow-hidden">
-
-                {/* Header */}
+        <div className="flex h-full w-full bg-gray-50">
+            <div className="flex flex-col w-full h-full bg-white shadow-xl rounded-2xl border border-gray-200 overflow-hidden">
                 <div className="flex items-center gap-3 px-6 py-4 border-b border-gray-200">
                     <div className="p-2 rounded-xl bg-blue-100 text-blue-600">
                         <Bot size={20} />
@@ -75,7 +73,6 @@ export const AiChatBot = () => {
                     </div>
                 </div>
 
-                {/* Chat Area */}
                 <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6 bg-gray-50">
                     {messages.length === 0 && (
                         <div className="text-center text-gray-400 mt-20">
@@ -143,7 +140,6 @@ export const AiChatBot = () => {
                     <div ref={messagesEndRef} />
                 </div>
 
-                {/* Input Area */}
                 <div className="border-t border-gray-200 bg-white px-4 py-4">
                     <div className="flex items-center gap-3">
                         <input

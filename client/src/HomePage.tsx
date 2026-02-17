@@ -5,13 +5,14 @@ import { useEffect, useState } from 'react';
 import type { OKRType } from './types/okr_types.tsx';
 import { KeyResultProvider } from './providers/KeyResultProvider.tsx';
 import { getAllOkrs } from './services/okr.service.ts';
-import { Target, Plus, LayoutDashboard, Sparkles } from 'lucide-react';
+import {Target, Plus, LayoutDashboard, Sparkles, BotIcon} from 'lucide-react';
 import {AiChatBot} from "./components/AiChatBot.tsx";
 
 const HomePage = () => {
   const [okrs, setOkrs] = useState<OKRType[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingOkr, setEditingOkr] = useState<OKRType | null>(null);
+  const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
 
   const loadOkrs = () => {
     getAllOkrs()
@@ -143,10 +144,25 @@ const HomePage = () => {
         </Modal>
       </KeyResultProvider>
 
+      <Modal
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+      >
+        <div className="h-[90vh] max-w-full">
+          <AiChatBot />
+        </div>
+      </Modal>
+
       <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-50 text-center">
         <p className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em]">OKR APP</p>
       </footer>
-      <AiChatBot/>
+      <button
+          onClick={() => setIsChatOpen(true)}
+          className="fixed bottom-6 right-6 bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-50"
+      >
+        <BotIcon/>
+      </button>
+
     </div>
   );
 };
