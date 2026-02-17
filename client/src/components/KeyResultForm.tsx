@@ -164,23 +164,33 @@ const handleAddOrUpdate = async () => {
                     </div>
                 </div>
 
-                <select
-                    value={keyResult.metric ?? 'percentage'}
-                    onChange={(e) =>
-                        setKeyResult((prev) => ({
-                            ...prev,
-                            metric: e.target.value,
-                        }))
-                    }
-                    disabled={isLoading}
-                    className="w-full border-2 border-gray-100 bg-white p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all duration-300 text-gray-700 font-medium disabled:opacity-50"
-                >
-                    <option value="percentage">Percentage (%)</option>
-                    <option value="count">Count</option>
-                    <option value="number">Number</option>
-                    <option value="currency">Currency</option>
-                    <option value="hours">Hours</option>
-                </select>
+                <div className="flex flex-col">
+                    <p className="text-sm font-black text-indigo-900 uppercase tracking-[0.15em]">
+                        Metric
+                    </p>
+
+                    <input
+                        list="metric-options"
+                        value={keyResult.metric ?? 'percentage'}
+                        onChange={(e) =>
+                            setKeyResult((prev) => ({
+                                ...prev,
+                                metric: e.target.value,
+                            }))
+                        }
+                        disabled={isLoading}
+                        placeholder="Select or type metric"
+                        className="w-full border-2 border-gray-100 bg-white p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all duration-300 text-gray-700 font-medium disabled:opacity-50"
+                    />
+
+                    <datalist id="metric-options">
+                        <option value="percentage" />
+                        <option value="count" />
+                        <option value="number" />
+                        <option value="currency" />
+                        <option value="hours" />
+                    </datalist>
+                </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -237,7 +247,7 @@ const handleAddOrUpdate = async () => {
                         </div>
 
                         <div className="ml-4 bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-black">
-                            {displayKr.progress}%
+                            {displayKr.progress}/{displayKr.target}
                         </div>
 
                         <div className="flex gap-2 ml-2">

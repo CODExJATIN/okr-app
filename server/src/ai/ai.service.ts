@@ -1,19 +1,37 @@
 import {Injectable} from '@nestjs/common';
 import {ChatDto} from "./chatDto";
-import {
-    GoogleGenAI, Type,
-} from '@google/genai';
+import {GoogleGenAI, ThinkingLevel, Type,} from '@google/genai';
 import {ObjectiveService} from "../objective/objective.service";
+import * as yup from 'yup';
+import {convertSchema} from '@sodaru/yup-to-json-schema';
+import {ObjectiveDto} from "../objective/dto/Objective.dto";
+
+const okrSchema = yup.object({
+    title: yup.string().required(),
+    keyResults: yup
+        .array()
+        .of(
+            yup.object({
+                description: yup.string().required(),
+                target: yup.number().integer().required(),
+                progress: yup.number().integer().default(0),
+                metric: yup.string().required(),
+            }),
+        )
+        .min(2, 'Must have at least 2 key results')
+        .required(),
+});
 
 @Injectable()
 export class AiService {
+    private  readonly ai : GoogleGenAI;
     constructor(private readonly objectiveService: ObjectiveService) {
+        this.ai = new GoogleGenAI({
+            apiKey: process.env['GEMINI_API_KEY'],
+        });
     }
 
     async send(chatDto: ChatDto[]) {
-        const ai = new GoogleGenAI({
-            apiKey: process.env['GEMINI_API_KEY'],
-        });
         const okrs = await this.objectiveService.getAll();
         const config = {
             temperature: 0.35,
@@ -54,17 +72,64 @@ ${JSON.stringify(okrs, null, 2)}
         const model = 'gemini-flash-latest';
         const contents = chatDto
 
-        const response = await ai.models.generateContent({
+        const response = await this.ai.models.generateContent({
             model,
             config,
             contents,
         });
 
-        const text =
-            response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+        return response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
+    }
 
-        return text;
+    async generateOkr(objectiveDto: ObjectiveDto) {
+        const config = {
+            thinkingConfig: {
+                thinkingLevel: ThinkingLevel.MINIMAL,
+            },
+            responseMimeType: 'application/json',
+            responseSchema: convertSchema(okrSchema),
+            systemInstruction: [
+                {
+                    text: `You are an expert OKR (Objectives and Key Results) generator. Your task is to accept a user's rough goal and convert it into a structured, high-quality OKR object.
 
+            Rules:
+            
+            SMART Criteria: Ensure Key Results are Specific, Measurable, and Time-bound. If the user input is vague, infer reasonable metrics to create a complete example. also make sure to use valid matrics such as number percentage days or any quantative attribute that suits the key result 
+            
+            key results should be very specific tiny goals type and practically achievable assuming that user is just an average person trying to achieving that objective`,
+                },
+            ],
+        };
+        const model = 'gemini-3-flash-preview';
+        const contents = [
+            {
+                role: 'user',
+                parts: [
+                    {
+                        text: `title: ${objectiveDto.title}  `,
+                    },
+                ],
+            },
+        ];
+
+        const response = await this.ai.models.generateContent({
+            model,
+            config,
+            contents,
+        });
+        const rawText = response?.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!rawText) {
+            throw new Error("Couldn't find any content from the ai.");
+        }
+        const json = await JSON.parse(rawText);
+        try {
+            const match = await okrSchema.validate(json);
+            console.log(match);
+        } catch (e) {
+            console.error(e);
+            throw new Error(e.toString());
+        }
+        return json;
     }
 }

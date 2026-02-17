@@ -6,8 +6,8 @@ interface KeyResultProps {
   index: number;
 }
 
-const KeyResult = ({ keyResult, index }: KeyResultProps) => {
-  const isFinished = Number(keyResult.progress) === 100;
+const KeyResult = ({ keyResult }: KeyResultProps) => {
+  const isFinished = keyResult.progress === keyResult.target;
 
   return (
     <div
@@ -51,7 +51,7 @@ const KeyResult = ({ keyResult, index }: KeyResultProps) => {
       >
         {!isFinished && <Activity size={12} className="animate-pulse" />}
         <span className="font-mono tabular-nums">{keyResult.progress}</span>
-        <span className="text-[10px] opacity-70">%</span>
+        <span className="text-[10px] opacity-70">{keyResult.metric}</span>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import {Body, Controller, Post} from '@nestjs/common';
 import {AiService} from "./ai.service";
 import {type ChatDto} from "./chatDto";
+import {ObjectiveDto} from "../objective/dto/Objective.dto";
 
 export default interface OkrDto {
 
@@ -17,5 +18,11 @@ export class AiController {
     sendMessage(@Body() chatDto:ChatDto[]){
         return this.aiService.send(chatDto);
     }
+
+    @Post('generate')
+    generateOkr(@Body() objectiveDto:ObjectiveDto){
+        return this.aiService.generateOkr(objectiveDto);
+    }
+
 
 }

@@ -32,6 +32,8 @@ export const KeyResultProvider = ({ children }: KeyResultProviderProps) => {
         const response = await createKeyResults(objectiveId, {
           description: keyResult.description,
           progress: keyResult.progress,
+          target: keyResult.target,
+          metric: keyResult.metric
         });
         setKeyResultList((prev) => {
           const updated = [...prev, response];

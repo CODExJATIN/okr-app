@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64dba47a-a862-431a-b6b8-3dc79563de0c" name="Changes" comment="initial backend setup">
-      <change afterPath="$PROJECT_DIR$/client/src/components/AiChatBot.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/HomePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/OKRForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/OKRForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AiChatBot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AiChatBot.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/KeyResult.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/KeyResult.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/KeyResultForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/KeyResultForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/OKRList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/OKRList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/providers/KeyResultProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/providers/KeyResultProvider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/services/okr.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/okr.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/types/okr_types.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/okr_types.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +172,8 @@
       <workItem from="1771304394210" duration="138000" />
       <workItem from="1771309249518" duration="239000" />
       <workItem from="1771310959651" duration="10632000" />
+      <workItem from="1771341685299" duration="2398000" />
+      <workItem from="1771344840365" duration="9261000" />
     </task>
     <task id="LOCAL-00001" summary="initial backend setup">
       <option name="closed" value="true" />

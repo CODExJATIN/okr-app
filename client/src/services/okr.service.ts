@@ -105,7 +105,7 @@ export const deleteKeyResults = async (objectiveId:string, keyResultId:string): 
   return result.json();
 }
 
-export const getAiResponse = async (data: ChatDto[]) => {
+export const sendToAi = async (data: ChatDto[]) => {
   const response = await fetch(`${SERVER_URL}/ai/chat`,
       {
         method: 'POST',
@@ -118,6 +118,22 @@ export const getAiResponse = async (data: ChatDto[]) => {
 
   if (!response.ok) {
     throw new Error('Failed to get ai');
+  }
+  return response.json();
+}
+
+export const generateOkr = async (prompt:string) => {
+
+  const response = await fetch(`${SERVER_URL}/ai/generate`,{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({title: prompt}),
+  })
+
+  if (!response.ok) {
+    throw new Error('Failed to generate okr');
   }
   return response.json();
 }
