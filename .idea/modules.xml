@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/okr-app.iml" filepath="$PROJECT_DIR$/.idea/okr-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Incubyte-okr-full-stack.iml" filepath="$PROJECT_DIR$/.idea/Incubyte-okr-full-stack.iml" />
     </modules>
   </component>
 </project>

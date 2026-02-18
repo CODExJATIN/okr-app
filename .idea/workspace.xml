@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="64dba47a-a862-431a-b6b8-3dc79563de0c" name="Changes" comment="initial backend setup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="15049ffd-a2a9-4aa1-94dd-1cdb3989cd6c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,207 +10,57 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JsbtTreeLayoutManager">
-    <layout place="tools.popupGrunt">
-      <scroll-view-position x="0" y="0" />
-    </layout>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="39LeqgOY4y7UBRq2RegxKwybGQl" />
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Nayan1729"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/CODExJATIN/okr-app.git",
+    "accountId": "c8247798-d75c-4478-a244-16a9ea3bb1a5"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="39qrCl35FBR8AsRjRYsaOcFnpgk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Jest.KeyResultService.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.KeyResultService.isCompleted.Should return false when any one of the key results is not completed.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.KeyResultService.isCompleted.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.KeyResultService.isCompleted.should return true when no key result found.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;D:/incubyte/okr-app/server/node_modules/jest&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\incubyte\\okr-app\\server\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="es6.move.members.recent.items">
-      <recent name="D:\incubyte\okr-app\server\src\ai\chatDto.ts" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Jest.KeyResultService">
-    <configuration name="KeyResultService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/server" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.spec.ts" />
-      <test-names>
-        <test-name value="KeyResultService" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="KeyResultService.isCompleted" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/server" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.spec.ts" />
-      <test-names>
-        <test-name value="KeyResultService" />
-        <test-name value="isCompleted" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="KeyResultService.isCompleted.Should return false when any one of the key results is not completed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/server" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.spec.ts" />
-      <test-names>
-        <test-name value="KeyResultService" />
-        <test-name value="isCompleted" />
-        <test-name value="Should return false when any one of the key results is not completed" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="KeyResultService.isCompleted.should return true when no key result found" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/server" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.spec.ts" />
-      <test-names>
-        <test-name value="KeyResultService" />
-        <test-name value="isCompleted" />
-        <test-name value="should return true when no key result found" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Jest.KeyResultService.isCompleted" />
-        <item itemvalue="Jest.KeyResultService" />
-        <item itemvalue="Jest.KeyResultService.isCompleted.should return true when no key result found" />
-        <item itemvalue="Jest.KeyResultService.isCompleted.Should return false when any one of the key results is not completed" />
-      </list>
-    </recent_temporary>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="64dba47a-a862-431a-b6b8-3dc79563de0c" name="Changes" comment="" />
-      <created>1770479970352</created>
+      <changelist id="15049ffd-a2a9-4aa1-94dd-1cdb3989cd6c" name="Changes" comment="" />
+      <created>1771434318515</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1770479970352</updated>
-      <workItem from="1770479971425" duration="3299000" />
-      <workItem from="1770537967651" duration="3948000" />
-      <workItem from="1770543985962" duration="8132000" />
-      <workItem from="1770565357987" duration="15949000" />
-      <workItem from="1770611098581" duration="10651000" />
-      <workItem from="1770628559950" duration="6345000" />
-      <workItem from="1770661187743" duration="616000" />
-      <workItem from="1770697479669" duration="9677000" />
-      <workItem from="1770715136221" duration="1885000" />
-      <workItem from="1770783853622" duration="3660000" />
-      <workItem from="1770787734939" duration="123000" />
-      <workItem from="1770789231187" duration="2003000" />
-      <workItem from="1770828073503" duration="4003000" />
-      <workItem from="1770871118640" duration="5336000" />
-      <workItem from="1770890728684" duration="1538000" />
-      <workItem from="1770893289003" duration="2931000" />
-      <workItem from="1770896845760" duration="172000" />
-      <workItem from="1770897039455" duration="439000" />
-      <workItem from="1770897502000" duration="165000" />
-      <workItem from="1770897795309" duration="121000" />
-      <workItem from="1770897933027" duration="1011000" />
-      <workItem from="1770962489114" duration="4407000" />
-      <workItem from="1771225415103" duration="1037000" />
-      <workItem from="1771231421906" duration="2840000" />
-      <workItem from="1771304394210" duration="138000" />
-      <workItem from="1771309249518" duration="239000" />
-      <workItem from="1771310959651" duration="10632000" />
-      <workItem from="1771341685299" duration="2398000" />
-      <workItem from="1771344840365" duration="9937000" />
-      <workItem from="1771389441526" duration="4099000" />
+      <updated>1771434318515</updated>
+      <workItem from="1771434319307" duration="30000" />
     </task>
-    <task id="LOCAL-00001" summary="initial backend setup">
-      <option name="closed" value="true" />
-      <created>1770544229376</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1770544229376</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="dependencySupport" implementationName="javascript:npm:react" />
-    <option featureType="dependencySupport" implementationName="javascript:npm:prettier" />
-    <option featureType="dependencySupport" implementationName="executable:docker" />
-    <option featureType="dependencySupport" implementationName="javascript:npm:tailwindcss" />
-    <option featureType="dependencySupport" implementationName="javascript:npm:prisma" />
-    <option featureType="dependencySupport" implementationName="javascript:npm:vite" />
-    <option featureType="dependencySupport" implementationName="executable:podman" />
-    <option featureType="dependencySupport" implementationName="executable:kubectl" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial backend setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial backend setup" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/OKRForm.tsx</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
