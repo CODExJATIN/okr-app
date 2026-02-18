@@ -1,15 +1,16 @@
-import {Edit3, TrendingUp, Layers} from 'lucide-react';
+import {Edit3, TrendingUp, Layers, Trash2} from 'lucide-react';
 import type {KeyResultType, OKRType} from '../types/okr_types.tsx';
 import {KeyResultList} from './KeyResult.tsx';
 
 interface OkrListProps {
     okrs: OKRType[];
     onEdit: (okr: OKRType) => void;
+    onDelete: (id:string) => void;
     onKeyResultClick: (kr: KeyResultType, objectiveId: string) => void;
 }
 
 
-export const OkrList = ({okrs, onEdit, onKeyResultClick}: OkrListProps) => {
+export const OkrList = ({okrs, onEdit, onKeyResultClick, onDelete}: OkrListProps) => {
     if (!okrs.length) {
         return (
             <div
@@ -116,6 +117,13 @@ export const OkrList = ({okrs, onEdit, onKeyResultClick}: OkrListProps) => {
                                         className="p-3 bg-slate-50 text-slate-400 rounded-xl hover:bg-slate-900 hover:text-white transition-all duration-300 group/btn shadow-inner"
                                     >
                                         <Edit3 size={18}/>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={()=> onDelete(okr.id)}
+                                        className="p-3 bg-slate-50 text-slate-400 rounded-xl hover:bg-red-600 hover:text-white transition-all duration-300 group/btn shadow-inner"
+                                        >
+                                        <Trash2/>
                                     </button>
                                 </div>
                             </div>
