@@ -1,13 +1,15 @@
 import {Edit3, TrendingUp, Layers} from 'lucide-react';
-import type {OKRType} from '../types/okr_types.tsx';
+import type {KeyResultType, OKRType} from '../types/okr_types.tsx';
 import {KeyResultList} from './KeyResult.tsx';
 
 interface OkrListProps {
     okrs: OKRType[];
     onEdit: (okr: OKRType) => void;
+    onKeyResultClick: (kr: KeyResultType, objectiveId: string) => void;
 }
 
-export const OkrList = ({okrs, onEdit}: OkrListProps) => {
+
+export const OkrList = ({okrs, onEdit, onKeyResultClick}: OkrListProps) => {
     if (!okrs.length) {
         return (
             <div
@@ -30,15 +32,15 @@ export const OkrList = ({okrs, onEdit}: OkrListProps) => {
             {okrs.map((okr: OKRType, index: number) => {
                 const completedKRs = okr.keyResults.filter((kr) => kr.progress === kr.target);
                 const totalKRs = okr.keyResults.length;
-                const progress =
-                    totalKRs > 0
-                        ? Math.round(
-                            completedKRs.reduce(
-                                (sum: number, kr) => sum + (kr.progress ?? 0),
-                                0
-                            ) / totalKRs
-                        )
-                        : 0;
+                const progress = totalKRs
+                    ? Math.round(
+                        okr.keyResults
+                            .map((kr) =>
+                                kr.target ? ((kr.progress ?? 0) / kr.target) * 100 : 0
+                            )
+                            .reduce((a, b) => a + b, 0) / totalKRs
+                    )
+                    : 0;
 
 
                 return (
@@ -144,7 +146,8 @@ export const OkrList = ({okrs, onEdit}: OkrListProps) => {
 
                                 <div
                                     className="bg-slate-50/40 rounded-3xl p-2 md:p-6 border border-slate-100/50 backdrop-blur-sm">
-                                    <KeyResultList keyResults={okr.keyResults}/>
+                                    <KeyResultList keyResults={okr.keyResults} objectiveId={okr.id}
+                                                   onKeyResultClick={onKeyResultClick}/>
                                 </div>
                             </div>
                         </div>
