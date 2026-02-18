@@ -4,7 +4,7 @@ import {OkrList} from './components/OKRList.tsx';
 import {useEffect, useState} from 'react';
 import type {OKRType} from './types/okr_types.tsx';
 import {KeyResultProvider} from './providers/KeyResultProvider.tsx';
-import {getAllOkrs} from './services/okr.service.ts';
+import {deleteObjective, getAllOkrs} from './services/okr.service.ts';
 import {Target, Plus, LayoutDashboard, Sparkles, BotIcon} from 'lucide-react';
 import {AiChatBot} from "./components/AiChatBot.tsx";
 import type {KeyResultType} from './types/okr_types';
@@ -30,6 +30,19 @@ const HomePage = () => {
                 alert('Failed to load OKRs');
             });
     };
+
+    const handleDeleteOkr = async (okrId: string) => {
+        const previous = okrs;
+
+        setOkrs(prev => prev.filter(o => o.id !== okrId));
+
+        try {
+            await deleteObjective(okrId);
+        } catch (err) {
+            setOkrs(previous); // rollback if failed
+        }
+    };
+
 
     useEffect(() => {
         loadOkrs();
@@ -115,14 +128,18 @@ const HomePage = () => {
                 Success Rate
               </span>
                                 <span className="text-xl font-black text-indigo-600">
-                {okrs.length > 0
-                    ? Math.round(
-                        (okrs.filter((o) => o.keyResults.some((kr) => Number(kr.progress) === 100))
-                                .length /
-                            okrs.length) *
-                        100
-                    )
-                    : 0}
+{(() => {
+    const allKRs = okrs.flatMap(o => o.keyResults);
+    if (allKRs.length === 0) return 0;
+
+    const completed = allKRs.filter(
+        kr => kr.progress === kr.target
+    ).length;
+
+    return Math.round((completed / allKRs.length) * 100);
+})()}
+
+
                                     %
               </span>
                             </div>
@@ -139,6 +156,7 @@ const HomePage = () => {
                                 setEditingOkr(okr);
                                 setIsModalOpen(true);
                             }}
+                            onDelete={handleDeleteOkr}
                             onKeyResultClick={handleKeyResultClick}
                         />
                     </div>
