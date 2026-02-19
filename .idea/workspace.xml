@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15049ffd-a2a9-4aa1-94dd-1cdb3989cd6c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/objective/dto/CreateOkr.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/OKRForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/OKRForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/okr.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/okr.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/server/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/objective/key-result/key-result.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/key-result/key-result.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/objective/objective.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/objective.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/objective/objective.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/objective.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/ai/ai.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/ai/ai.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/ai/ai.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/ai/ai.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/objective/dto/CreateOkr.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/dto/CreateOkr.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/objective/key-result/key-result.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/key-result/key-result.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/objective/objective.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/objective.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/objective/objective.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/objective.service.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,19 +43,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Jest.Objective.GET /objective.executor": "Run",
+    "Jest.Objective.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Implement-RAG",
+    "git-widget-placeholder": "documentation",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "D:/incubyte/okr-app/server/node_modules/jest",
     "nodejs_package_manager_path": "pnpm",
     "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
     "to.speed.mode.migration.done": "true",
@@ -65,6 +66,39 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Jest.Objective.GET /objective">
+    <configuration name="Objective" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/server" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/server/test/objective.e2e-spec.ts" />
+      <test-names>
+        <test-name value="Objective" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Objective.GET /objective" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/server" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/server/test/objective.e2e-spec.ts" />
+      <test-names>
+        <test-name value="Objective" />
+        <test-name value="GET /objective" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.Objective.GET /objective" />
+        <item itemvalue="Jest.Objective" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,6 +115,7 @@
       <updated>1771434318515</updated>
       <workItem from="1771434319307" duration="30000" />
       <workItem from="1771485653198" duration="9819000" />
+      <workItem from="1771512643276" duration="8375000" />
     </task>
     <servers />
   </component>
