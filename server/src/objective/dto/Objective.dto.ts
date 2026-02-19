@@ -1,11 +1,15 @@
-import {IsNotEmpty, IsString, MaxLength} from 'class-validator';
-import {ApiProperty} from '@nestjs/swagger';
+import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 
 export class ObjectiveDto {
     @IsString()
     @IsNotEmpty()
     @MaxLength(100)
-    @ApiProperty({description:'Objective name'})
+    @ApiProperty({
+        description: 'Title of the Objective',
+        example: 'Improve customer satisfaction',
+        maxLength: 100,
+    })
     title: string;
 }
