@@ -69,18 +69,19 @@ ${JSON.stringify(okrs, null, 2)}
             ],
         };
 
-        return this.geminiService.generateContent(
-            'gemini-flash-latest',
+        const rawText = await this.geminiService.generateContent(
+            'gemini-2.5-flash',
             config,
             chatDto,
         );
+        const msg = {
+            message: rawText
+        }
+        return msg;
     }
 
     async generateOkr(objectiveDto: ObjectiveDto) {
         const config = {
-            thinkingConfig: {
-                thinkingLevel: ThinkingLevel.MINIMAL,
-            },
             responseMimeType: 'application/json',
             responseSchema: convertSchema(okrSchema),
             systemInstruction: [
@@ -110,7 +111,7 @@ Rules:
         ];
 
         const rawText = await this.geminiService.generateContent(
-            'gemini-3-flash-preview',
+            'gemini-2.5-flash',
             config,
             contents,
         );

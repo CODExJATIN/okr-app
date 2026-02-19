@@ -23,6 +23,4 @@ export class AiController {
     generateOkr(@Body() objectiveDto:ObjectiveDto){
         return this.aiService.generateOkr(objectiveDto);
     }
-
-
 }

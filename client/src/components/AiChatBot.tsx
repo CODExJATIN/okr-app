@@ -40,7 +40,7 @@ export const AiChatBot = () => {
 
         try {
             const result = await sendToAi([...messages, newMessage]);
-
+            console.log(result);
             const aiResponse: ChatDto = {
                 role: "model",
                 parts: [{ text: result.message }],

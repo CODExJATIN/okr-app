@@ -119,6 +119,8 @@ export const sendToAi = async (data: ChatDto[]) => {
   if (!response.ok) {
     throw new Error('Failed to get ai');
   }
+  console.log(response);
+  
   return response.json();
 }
 
