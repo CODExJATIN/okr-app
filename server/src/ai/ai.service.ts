@@ -35,13 +35,11 @@ export class AiService {
     ) { }
 
     async send(chatDto: ChatDto[]) {
-        // Extract the latest user message for semantic search
         const lastUserMessage = [...chatDto]
             .reverse()
             .find((msg) => msg.role === 'user');
         const queryText = lastUserMessage?.parts?.[0]?.text ?? '';
 
-        // Use vector search to find relevant OKRs
         let relevantOkrs: any[] = [];
         if (queryText) {
             try {
@@ -62,9 +60,6 @@ export class AiService {
 
         const config = {
             temperature: 0.35,
-            thinkingConfig: {
-                thinkingBudget: -1,
-            },
             responseSchema: {
                 type: Type.OBJECT,
                 required: ['message'],
@@ -96,18 +91,16 @@ ${JSON.stringify(relevantOkrs, null, 2)}
             ],
         };
 
-        return this.geminiService.generateContent(
-            'gemini-flash-latest',
+        const rawText =await this.geminiService.generateContent(
+            'gemini-2.5-flash',
             config,
             chatDto,
         );
+        return {message : rawText}
     }
 
     async generateOkr(objectiveDto: ObjectiveDto) {
         const config = {
-            thinkingConfig: {
-                thinkingLevel: ThinkingLevel.MINIMAL,
-            },
             responseMimeType: 'application/json',
             responseSchema: convertSchema(okrSchema),
             systemInstruction: [

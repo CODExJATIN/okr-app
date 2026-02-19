@@ -1,6 +1,6 @@
-import {NestFactory} from '@nestjs/core';
-import {AppModule} from './app.module';
-import {ValidationPipe} from "@nestjs/common";
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { ValidationPipe } from "@nestjs/common";
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 
@@ -15,10 +15,12 @@ async function bootstrap() {
     );
     app.enableCors();
     const config = new DocumentBuilder()
-        .setTitle('Cats example')
-        .setDescription('The cats API description')
+        .setTitle('OKR Tracker API')
+        .setDescription('API for managing Objectives and Key Results (OKRs) with AI-powered features including chat assistance, OKR generation, and semantic search via RAG.')
         .setVersion('1.0')
-        .addTag('cats')
+        .addTag('Objectives', 'CRUD operations for Objectives')
+        .addTag('Key Results', 'CRUD operations for Key Results under an Objective')
+        .addTag('AI', 'AI-powered chat, OKR generation, and semantic search')
         .build();
     const documentFactory = () => SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('docs', app, documentFactory);
