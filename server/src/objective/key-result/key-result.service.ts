@@ -1,6 +1,6 @@
-import {Injectable, NotFoundException} from '@nestjs/common';
-import {PrismaService} from "../../prisma.service";
-import {KeyResultDto} from "./dto/key-result.dto";
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { PrismaService } from "../../prisma.service";
+import { KeyResultDto } from "./dto/key-result.dto";
 import { Logger } from '@nestjs/common';
 
 @Injectable()
@@ -49,7 +49,7 @@ export class KeyResultService {
         let isCompleted = true;
 
 
-        if (!res){
+        if (!res) {
             console.log('OBJECTIVE NOT FOUND');
             throw new NotFoundException('objective not found')
         }
@@ -61,7 +61,7 @@ export class KeyResultService {
             }
         }
 
-        progress = res.keyResults.length > 0 ? progress/res.keyResults.length : 100;
+        progress = res.keyResults.length > 0 ? progress / res.keyResults.length : 100;
 
         await this.prismaService.objective.update({
             where: {
@@ -69,10 +69,10 @@ export class KeyResultService {
             },
             data: {
                 isCompleted: isCompleted,
-                progress : progress
+                progress: progress
             }
         })
-        return {isCompleted , progress};
+        return { isCompleted, progress };
     }
 
     update(keyResultId: string, keyResultToUpdate: Partial<KeyResultDto>) {
@@ -92,5 +92,14 @@ export class KeyResultService {
                 id: keyResultId,
             }
         })
+    }
+
+    async createMany(keyResultDto: KeyResultDto[], objectiveId: string) {
+        const result = await this.prismaService.keyResult.createMany({
+            data: keyResultDto.map((kr) => ({ ...kr, objectiveId }))
+        });
+        if (result) {
+
+        }
     }
 }

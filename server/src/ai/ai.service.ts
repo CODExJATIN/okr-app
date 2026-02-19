@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { ChatDto } from './chatDto';
 import { ObjectiveService } from '../objective/objective.service';
 import { ObjectiveDto } from '../objective/dto/Objective.dto';
@@ -6,6 +6,7 @@ import { GeminiService } from '../gemini.service';
 import { ThinkingLevel, Type } from '@google/genai';
 import * as yup from 'yup';
 import { convertSchema } from '@sodaru/yup-to-json-schema';
+import { EmbeddingService } from './embedding.service';
 
 const okrSchema = yup.object({
     title: yup.string().required(),
@@ -25,13 +26,39 @@ const okrSchema = yup.object({
 
 @Injectable()
 export class AiService {
+    private readonly logger = new Logger(AiService.name);
+
     constructor(
         private readonly objectiveService: ObjectiveService,
         private readonly geminiService: GeminiService,
-    ) {}
+        private readonly embeddingService: EmbeddingService,
+    ) { }
 
     async send(chatDto: ChatDto[]) {
-        const okrs = await this.objectiveService.getAll();
+        // Extract the latest user message for semantic search
+        const lastUserMessage = [...chatDto]
+            .reverse()
+            .find((msg) => msg.role === 'user');
+        const queryText = lastUserMessage?.parts?.[0]?.text ?? '';
+
+        // Use vector search to find relevant OKRs
+        let relevantOkrs: any[] = [];
+        if (queryText) {
+            try {
+                const results = await this.embeddingService.findSimilar(queryText, 5);
+                relevantOkrs = results;
+                this.logger.log(results);
+                this.logger.log(`Found ${results.length} relevant OKRs via RAG`);
+            } catch (e) {
+                this.logger.warn(`RAG search failed, falling back to all OKRs: ${e}`);
+            }
+        }
+
+        // Fallback: if no embeddings exist yet, use all OKRs
+        if (relevantOkrs.length === 0) {
+            relevantOkrs = await this.objectiveService.getAll();
+            this.logger.log('Using all OKRs as fallback (no RAG results)');
+        }
 
         const config = {
             temperature: 0.35,
@@ -62,8 +89,8 @@ Scope Rules:
   "This request is outside my scope. I can only assist with Objectives and Key Results."
 - Respond politely to greetings.
 
-Here is the complete list of Objectives and their respective Key Results:
-${JSON.stringify(okrs, null, 2)}
+Here are the most relevant Objectives and Key Results for context:
+${JSON.stringify(relevantOkrs, null, 2)}
 `,
                 },
             ],

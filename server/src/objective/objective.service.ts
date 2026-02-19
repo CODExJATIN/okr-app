@@ -1,10 +1,13 @@
-import {Injectable} from '@nestjs/common';
-import {PrismaService} from "../prisma.service";
-import {ObjectiveDto} from "./dto/Objective.dto";
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from "../prisma.service";
+import { ObjectiveDto } from "./dto/Objective.dto";
+import { EmbeddingService } from "../ai/embedding.service";
+import {KeyResultDto} from "./key-result/dto/key-result.dto";
 
 @Injectable()
 export class ObjectiveService {
-    constructor(private readonly prismaService: PrismaService) {
+    constructor(private readonly prismaService: PrismaService,
+        private readonly embeddingService: EmbeddingService) {
     }
 
     getAll() {
@@ -28,13 +31,16 @@ export class ObjectiveService {
         )
     }
 
-    create(objectiveDto: ObjectiveDto) {
-        return this.prismaService.objective.create({
+    async create(objectiveDto: ObjectiveDto) {
+        const objective = await this.prismaService.objective.create({
             data: objectiveDto,
             include: {
                 keyResults: true,
             }
         });
+        console.log(objective);
+        this.embeddingService.storeEmbedding(objective.id, JSON.stringify(objective)).catch(() => { });
+        return objective;
     }
 
     update(objectiveDto: ObjectiveDto, id: string) {
@@ -50,13 +56,34 @@ export class ObjectiveService {
     }
 
     delete(id: string) {
-      return this.prismaService.objective.delete({
-          where: {
-              id: id,
-          },
-          include: {
-              keyResults: true,
-          }
-      })
+        return this.prismaService.objective.delete({
+            where: {
+                id: id,
+            },
+            include: {
+                keyResults: true,
+            }
+        })
+    }
+
+    async createWithKR(objective: ObjectiveDto, keyResults: KeyResultDto[]) {
+        const result = await this.prismaService.objective.create({
+            data: {
+                title: objective.title,
+                keyResults:{
+                    create:keyResults
+                }
+            },
+            include:{
+                keyResults:true
+            }
+        });
+
+        this.embeddingService.storeEmbedding(result.id, JSON.stringify(result)).catch(() => { });
+        return result;
+
+
+
+
     }
 }

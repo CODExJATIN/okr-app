@@ -29,6 +29,11 @@ export class KeyResultController {
     return this.keyResultService.create(keyResultDto, objectiveId);
   }
 
+  @Post()
+  createMany(@Param('objectiveId') keyResultDto: KeyResultDto[], objectiveId: string) {
+    return this.keyResultService.createMany(keyResultDto, objectiveId);
+  }
+
   @Patch('/:keyResultId')
   update(@Body() keyResultToUpdate:Partial<KeyResultDto>, @Param('keyResultId') keyResultId: string) {
     return this.keyResultService.update(keyResultId, keyResultToUpdate);

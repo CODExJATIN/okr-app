@@ -7,7 +7,7 @@ export class GeminiService {
 
     constructor() {
         this.ai = new GoogleGenAI({
-            apiKey: process.env.GEMINI_API_KEY,
+            apiKey: process.env.GOOGLE_API_KEY,
         });
     }
 

@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="15049ffd-a2a9-4aa1-94dd-1cdb3989cd6c" name="Changes" comment="" />
+    <list default="true" id="15049ffd-a2a9-4aa1-94dd-1cdb3989cd6c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/src/objective/dto/CreateOkr.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/OKRForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/OKRForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/okr.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/okr.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/server/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/objective/key-result/key-result.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/key-result/key-result.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/key-result/key-result.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/objective/objective.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/objective.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/objective/objective.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/objective/objective.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,21 +23,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Nayan1729"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Nayan1729&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/CODExJATIN/okr-app.git",
-    "accountId": "c8247798-d75c-4478-a244-16a9ea3bb1a5"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/CODExJATIN/okr-app.git&quot;,
+    &quot;accountId&quot;: &quot;c8247798-d75c-4478-a244-16a9ea3bb1a5&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="39qrCl35FBR8AsRjRYsaOcFnpgk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,17 +48,27 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "Implement-RAG",
     "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
     "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "D:\\incubyte\\okr-app\\server\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -57,6 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1771434318515</updated>
       <workItem from="1771434319307" duration="30000" />
+      <workItem from="1771485653198" duration="9819000" />
     </task>
     <servers />
   </component>
