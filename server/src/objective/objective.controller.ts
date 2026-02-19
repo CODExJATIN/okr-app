@@ -2,7 +2,8 @@ import {Body, Controller, Delete, Get, Param, Patch, Post} from '@nestjs/common'
 import {ObjectiveService} from './objective.service';
 import {ObjectiveDto} from "./dto/Objective.dto";
 import {ApiOperation, ApiResponse} from "@nestjs/swagger";
-
+import {KeyResultDto} from "./key-result/dto/key-result.dto";
+import {CreateOkrDto} from "./dto/CreateOkr.dto";
 
 @Controller('objective')
 export class ObjectiveController {
@@ -25,6 +26,12 @@ export class ObjectiveController {
     @ApiResponse({ status: 201, description: 'Created.' })
     createObjective(@Body() objectiveDto: ObjectiveDto) {
         return this.objectiveService.create(objectiveDto);
+    }
+
+    @Post('many')
+    createObjectiveWithKR(@Body() okr:CreateOkrDto) {
+        console.log(okr);
+        return this.objectiveService.createWithKR(okr.objective, okr.keyResults);
     }
 
     @Patch(':id')

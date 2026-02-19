@@ -93,4 +93,13 @@ export class KeyResultService {
             }
         })
     }
+
+    async createMany(keyResultDto: KeyResultDto[], objectiveId: string) {
+        const result = await this.prismaService.keyResult.createMany({
+            data: keyResultDto.map((kr) => ({ ...kr, objectiveId }))
+        });
+        if (result) {
+
+        }
+    }
 }

@@ -3,7 +3,7 @@ import {useContext, useEffect, useState} from 'react';
 import KeyResultForm from './components/KeyResultForm.tsx';
 import {KeyResultContext} from './providers/KeyResultProvider.tsx';
 import type {OKRType} from './types/okr_types.tsx';
-import {createOkr, updateOkr, createKeyResults, generateOkr} from './services/okr.service.ts';
+import {createOkr, updateOkr, generateOkr} from './services/okr.service.ts';
 
 interface OKRFormProps {
     onSuccess: () => void;
@@ -57,35 +57,19 @@ function OKRForm({onSuccess, setOkrs, editingOkr}: OKRFormProps) {
             return;
         }
 
-        createOkr({title: objective})
+        createOkr({title: objective},keyResultList)
             .then(async (response) => {
 
                 setOkrs((prev) => [response, ...prev]);
 
                 if (keyResultList.length > 0) {
-                    try {
-                        const keyResultsWithIds = await Promise.all(
-                            keyResultList.map((kr) =>
-                                createKeyResults(response.id, {
-                                    description: kr.description,
-                                    progress: kr.progress,
-                                    target: kr.target,
-                                    metric: kr.metric,
-                                })
-                            )
-                        );
-
                         setOkrs((prev) =>
                             prev.map((okr) =>
                                 okr.id === response.id
-                                    ? {...okr, keyResults: keyResultsWithIds}
+                                    ? {...okr, keyResults: keyResultList}
                                     : okr
                             )
                         );
-                    } catch (err) {
-                        console.error('Error creating key results:', err);
-                        alert('OKR created but failed to create some key results');
-                    }
                 }
 
                 resetKeyResults();

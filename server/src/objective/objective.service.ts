@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from "../prisma.service";
 import { ObjectiveDto } from "./dto/Objective.dto";
 import { EmbeddingService } from "../ai/embedding.service";
+import {KeyResultDto} from "./key-result/dto/key-result.dto";
 
 @Injectable()
 export class ObjectiveService {
@@ -63,5 +64,26 @@ export class ObjectiveService {
                 keyResults: true,
             }
         })
+    }
+
+    async createWithKR(objective: ObjectiveDto, keyResults: KeyResultDto[]) {
+        const result = await this.prismaService.objective.create({
+            data: {
+                title: objective.title,
+                keyResults:{
+                    create:keyResults
+                }
+            },
+            include:{
+                keyResults:true
+            }
+        });
+
+        this.embeddingService.storeEmbedding(result.id, JSON.stringify(result)).catch(() => { });
+        return result;
+
+
+
+
     }
 }

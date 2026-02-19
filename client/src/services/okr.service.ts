@@ -14,10 +14,10 @@ export const getAllOkrs = async (): Promise<OKRType[]> => {
   return response.json();
 };
 
-export const createOkr = async (objective: {title: string})=>{
-  const response = await fetch(`${SERVER_URL}/objective`,{
+export const createOkr = async (objective: {title: string}, keyResults:KeyResultType[])=>{
+  const response = await fetch(`${SERVER_URL}/objective/many`,{
     method: 'POST',
-    body: JSON.stringify({title: objective.title}),
+    body: JSON.stringify({objective:{title:objective.title}, keyResults:keyResults}),
     headers: {
       'Content-Type': 'application/json'
     }
