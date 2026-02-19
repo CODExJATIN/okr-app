@@ -30,16 +30,15 @@ export const OkrList = ({okrs, onEdit}: OkrListProps) => {
             {okrs.map((okr: OKRType, index: number) => {
                 const completedKRs = okr.keyResults.filter((kr) => kr.progress === kr.target);
                 const totalKRs = okr.keyResults.length;
-                const progress =
-                    totalKRs > 0
-                        ? Math.round(
-                            completedKRs.reduce(
-                                (sum: number, kr) => sum + (kr.progress ?? 0),
-                                0
-                            ) / totalKRs
+               const progress = totalKRs
+                    ? Math.round(
+                        okr.keyResults
+                            .map((kr) =>
+                            kr.target ? ((kr.progress ?? 0) / kr.target) * 100 : 0
+                            )
+                            .reduce((a, b) => a + b, 0) / totalKRs
                         )
-                        : 0;
-
+                    : 0;
 
                 return (
                     <div
