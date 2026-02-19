@@ -10,7 +10,7 @@ export class CreateOkrDto {
     objective: ObjectiveDto;
 
     @IsArray()
-    @ValidateNested({ each: true })
+    @ValidateNested({ each: true }) 
     @Type(() => KeyResultDto)
     keyResults: KeyResultDto[];
 }
