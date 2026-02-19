@@ -1,13 +1,16 @@
-import {Edit3, TrendingUp, Layers} from 'lucide-react';
-import type {OKRType} from '../types/okr_types.tsx';
+import {Edit3, TrendingUp, Layers, Trash2} from 'lucide-react';
+import type {KeyResultType, OKRType} from '../types/okr_types.tsx';
 import {KeyResultList} from './KeyResult.tsx';
 
 interface OkrListProps {
     okrs: OKRType[];
     onEdit: (okr: OKRType) => void;
+    onDelete: (id:string) => void;
+    onKeyResultClick: (kr: KeyResultType, objectiveId: string) => void;
 }
 
-export const OkrList = ({okrs, onEdit}: OkrListProps) => {
+
+export const OkrList = ({okrs, onEdit, onKeyResultClick, onDelete}: OkrListProps) => {
     if (!okrs.length) {
         return (
             <div
@@ -30,15 +33,16 @@ export const OkrList = ({okrs, onEdit}: OkrListProps) => {
             {okrs.map((okr: OKRType, index: number) => {
                 const completedKRs = okr.keyResults.filter((kr) => kr.progress === kr.target);
                 const totalKRs = okr.keyResults.length;
-               const progress = totalKRs
+                const progress = totalKRs
                     ? Math.round(
                         okr.keyResults
                             .map((kr) =>
-                            kr.target ? ((kr.progress ?? 0) / kr.target) * 100 : 0
+                                kr.target ? ((kr.progress ?? 0) / kr.target) * 100 : 0
                             )
                             .reduce((a, b) => a + b, 0) / totalKRs
-                        )
+                    )
                     : 0;
+
 
                 return (
                     <div
@@ -114,6 +118,13 @@ export const OkrList = ({okrs, onEdit}: OkrListProps) => {
                                     >
                                         <Edit3 size={18}/>
                                     </button>
+                                    <button
+                                        type="button"
+                                        onClick={()=> onDelete(okr.id)}
+                                        className="p-3 bg-slate-50 text-slate-400 rounded-xl hover:bg-red-600 hover:text-white transition-all duration-300 group/btn shadow-inner"
+                                        >
+                                        <Trash2/>
+                                    </button>
                                 </div>
                             </div>
 
@@ -143,7 +154,8 @@ export const OkrList = ({okrs, onEdit}: OkrListProps) => {
 
                                 <div
                                     className="bg-slate-50/40 rounded-3xl p-2 md:p-6 border border-slate-100/50 backdrop-blur-sm">
-                                    <KeyResultList keyResults={okr.keyResults}/>
+                                    <KeyResultList keyResults={okr.keyResults} objectiveId={okr.id}
+                                                   onKeyResultClick={onKeyResultClick}/>
                                 </div>
                             </div>
                         </div>

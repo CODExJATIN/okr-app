@@ -3,7 +3,8 @@ import {useContext, useEffect, useState} from 'react';
 import KeyResultForm from './components/KeyResultForm.tsx';
 import {KeyResultContext} from './providers/KeyResultProvider.tsx';
 import type {OKRType} from './types/okr_types.tsx';
-import {createOkr, updateOkr, generateOkr} from './services/okr.service.ts';
+import {createOkr, updateOkr, createKeyResults, generateOkr} from './services/okr.service.ts';
+import FormSkeleton from "./components/FormSkeleton.tsx";
 
 interface OKRFormProps {
     onSuccess: () => void;
@@ -84,7 +85,7 @@ function OKRForm({onSuccess, setOkrs, editingOkr}: OKRFormProps) {
     }
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <FormSkeleton/>
     }
 
     async function handleGeneratingOkr() {
